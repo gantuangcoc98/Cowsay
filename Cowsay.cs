@@ -1,16 +1,36 @@
+using System.Diagnostics;
+
 namespace Class;
 
 public class Cowsay
 {
 
-    public event EventHandler<string> Reply;
+    public event Action? Reply;
     
-    public void Say(string? Message)
+    public void Say()
     {
-        if (Message is null)
-            return;
+        Reply?.Invoke();
+    }
 
-        Reply(this, Message);
+    public static string StdOut()
+    {
+        var cowsay = new Process()
+        {
+            StartInfo = new ProcessStartInfo()
+            {
+                FileName = "cowsay",
+                RedirectStandardInput = true,
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true,
+            }
+        };
+
+        cowsay.Start();
+        cowsay.StandardInput.WriteLine(Console.ReadLine());
+        cowsay.StandardInput.Close();
+
+        return cowsay.StandardOutput.ReadToEnd();
     }
 
 }

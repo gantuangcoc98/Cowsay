@@ -15,3 +15,4 @@
 /home/gantuangcoc98/CsharpProjects/CowsayV2/obj/Debug/net8.0/CowsayV2.pdb
 /home/gantuangcoc98/CsharpProjects/CowsayV2/obj/Debug/net8.0/CowsayV2.genruntimeconfig.cache
 /home/gantuangcoc98/CsharpProjects/CowsayV2/obj/Debug/net8.0/ref/CowsayV2.dll
+/home/gantuangcoc98/CsharpProjects/CowsayV2/obj/Debug/net8.0/CowsayV2.sourcelink.json
