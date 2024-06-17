@@ -1,6 +1,6 @@
 ﻿using Class;
 
-Console.Write("Enter input: ");
+Console.Write("Tell me what you want to say: ");
 string? input = Console.ReadLine();
 
 var cowsay = new Cowsay();
