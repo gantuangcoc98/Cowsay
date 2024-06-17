@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CowsayV2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fb20dc57f5e804d4336b6c3098c1796dabc3d7f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c6a51f14c55278a49abf96cc8e39ec2d82c9771")]
 [assembly: System.Reflection.AssemblyProductAttribute("CowsayV2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CowsayV2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
