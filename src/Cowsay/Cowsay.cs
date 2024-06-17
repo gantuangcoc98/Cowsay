@@ -5,14 +5,27 @@ namespace Class;
 public class Cowsay
 {
 
-    public event Action? Reply;
+    public event EventHandler<ReplyEventArgs>? Reply;
     
-    public void Say()
+    public void Say(string? Message)
     {
-        Reply?.Invoke();
+        if (Message is null)
+            return;
+
+        ReplyEventArgs replyEventArgs = new();
+        replyEventArgs.Process(Message);
+
+        Reply?.Invoke(this, replyEventArgs);
     }
 
-    public static string StdOut()
+}
+
+public class ReplyEventArgs : EventArgs
+{
+
+    public string? Message { get; set; }
+
+    public void Process(string? Message)
     {
         var cowsay = new Process()
         {
@@ -27,10 +40,15 @@ public class Cowsay
         };
 
         cowsay.Start();
-        cowsay.StandardInput.WriteLine(Console.ReadLine());
+        cowsay.StandardInput.WriteLine(Message);
         cowsay.StandardInput.Close();
 
-        return cowsay.StandardOutput.ReadToEnd();
-    }
+        this.Message = cowsay.StandardOutput.ReadToEnd();
 
+        bool exited = cowsay.WaitForExit(0);
+        if (!exited)
+        { 
+            cowsay.Kill(); 
+        }
+    }
 }
