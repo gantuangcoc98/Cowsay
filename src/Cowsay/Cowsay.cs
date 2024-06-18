@@ -11,7 +11,7 @@ public class Cowsay
     {
         if (Message is null)
             return;
-
+        
         ReplyEventArgs replyEventArgs = new();
         replyEventArgs.Process(Message);
 
